@@ -25,7 +25,7 @@ container.addEventListener('scroll', () => {
 
         setTimeout(() => {
             isScrolling = false;
-        }, 100);
+        }, 333);
     }
 });
 
@@ -45,5 +45,5 @@ function goToSlide(index) {
 
     setTimeout(() => {
         isScrolling = false;
-    }, 100);
+    }, 333);
 }
