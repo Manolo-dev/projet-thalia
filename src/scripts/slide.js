@@ -1,6 +1,8 @@
 const slideContainer = document.querySelector('.slide-container');
 const slideWrapper = document.querySelector('.slide-wrapper');
 const slides = Array.from(document.querySelectorAll('.slide'));
+let touchstartX = 0;
+let touchendX = 0;
 
 let currentSlide = 0;
 
@@ -13,14 +15,30 @@ function goToSlide(index) {
     document.querySelectorAll('.slide-buttons-item')[currentSlide].classList.add('active');
 }
 
-slideContainer.addEventListener('swipeleft', () => {
+function swipeleft() {
     if (currentSlide < slides.length - 1) {
         goToSlide(currentSlide + 1);
     }
-});
+}
 
-slideContainer.addEventListener('swiperight', () => {
+function swiperight() {
     if (currentSlide > 0) {
         goToSlide(currentSlide - 1);
     }
-});
+}
+
+function checkDirection() {
+    if (touchendX < touchstartX) 
+        swipeleft();
+    if (touchendX > touchstartX)
+        swiperight();
+}
+
+document.addEventListener('touchstart', e => {
+    touchstartX = e.changedTouches[0].screenX;
+})
+
+document.addEventListener('touchend', e => {
+    touchendX = e.changedTouches[0].screenX;
+    checkDirection();
+})
