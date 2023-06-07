@@ -1,49 +1,26 @@
-const container = document.querySelector('.slide-images');
-let isScrolling = false;
+const slideContainer = document.querySelector('.slide-container');
+const slideWrapper = document.querySelector('.slide-wrapper');
+const slides = Array.from(document.querySelectorAll('.slide'));
+
 let currentSlide = 0;
 
-container.addEventListener('scroll', () => {
-    if (!isScrolling) {
-        isScrolling = true;
+function goToSlide(index) {
+    currentSlide = index;
+    const slideWidth = slides[0].offsetWidth;
+    const newPosition = -1 * slideWidth * index;
+    slideWrapper.style.transform = `translateX(${newPosition}px)`;
+    document.querySelector('.slide-buttons-item.active').classList.remove('active');
+    document.querySelectorAll('.slide-buttons-item')[currentSlide].classList.add('active');
+}
 
-        const sectionWidth = container.clientWidth;
-        const scrollPosition = container.scrollLeft;
-
-        const newSlide = Math.round(scrollPosition / sectionWidth);
-        const snapPosition = newSlide * sectionWidth;
-
-        container.scrollTo({
-            left: snapPosition,
-            behavior: 'smooth'
-        });
-
-        if (newSlide !== currentSlide) {
-            currentSlide = newSlide;
-            document.querySelector('.slide-buttons-item.active').classList.remove('active');
-            document.querySelectorAll('.slide-buttons-item')[currentSlide].classList.add('active');
-        }
-
-        setTimeout(() => {
-            isScrolling = false;
-        }, 333);
+slideContainer.addEventListener('swipeleft', () => {
+    if (currentSlide < slides.length - 1) {
+        goToSlide(currentSlide + 1);
     }
 });
 
-function goToSlide(index) {
-    isScrolling = true;
-    const sectionWidth = container.clientWidth;
-    const snapPosition = index * sectionWidth;
-
-    container.scrollTo({
-        left: snapPosition,
-        behavior: 'smooth'
-    });
-
-    currentSlide = index;
-    document.querySelector('.slide-buttons-item.active').classList.remove('active');
-    document.querySelectorAll('.slide-buttons-item')[currentSlide].classList.add('active');
-
-    setTimeout(() => {
-        isScrolling = false;
-    }, 333);
-}
+slideContainer.addEventListener('swiperight', () => {
+    if (currentSlide > 0) {
+        goToSlide(currentSlide - 1);
+    }
+});
