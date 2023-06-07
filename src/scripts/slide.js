@@ -41,11 +41,22 @@ function checkDirection() {
 
 document.addEventListener('mousedown', e => {
     touchstartX = e.screenX;
-})
+});
 
 document.addEventListener('mouseup', e => {
     if (slideContainer.contains(e.target)) {
         touchendX = e.screenX;
         checkDirection();
     }
-})
+});
+
+document.addEventListener('touchstart', e => {
+    touchstartX = e.changedTouches[0].screenX;
+});
+
+document.addEventListener('touchend', e => {
+    if (slideContainer.contains(e.target)) {
+        touchendX = e.changedTouches[0].screenX;
+        checkDirection();
+    }
+});
