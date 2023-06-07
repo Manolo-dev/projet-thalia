@@ -3,7 +3,7 @@ const slideWrapper = document.querySelector('.slide-wrapper');
 const slides = Array.from(document.querySelectorAll('.slide-wrapper img'));
 let touchstartX = 0;
 let touchendX = 0;
-
+let isSlidingWithScroll = false;
 let currentSlide = 0;
 
 function goToSlide(index) {
@@ -39,24 +39,41 @@ function checkDirection() {
     }
 }
 
-document.addEventListener('mousedown', e => {
+slideContainer.addEventListener('mousedown', e => {
     touchstartX = e.screenX;
 });
 
-document.addEventListener('mouseup', e => {
+slideContainer.addEventListener('mouseup', e => {
     if (slideContainer.contains(e.target)) {
         touchendX = e.screenX;
         checkDirection();
     }
 });
 
-document.addEventListener('touchstart', e => {
+slideContainer.addEventListener('touchstart', e => {
     touchstartX = e.changedTouches[0].screenX;
 });
 
-document.addEventListener('touchend', e => {
+slideContainer.addEventListener('touchend', e => {
     if (slideContainer.contains(e.target)) {
         touchendX = e.changedTouches[0].screenX;
         checkDirection();
     }
+});
+
+slideContainer.addEventListener('wheel', (e) => {
+    if (!e.shiftKey | isSlidingWithScroll)
+        return;
+    if (e.wheelDelta < 0) {
+        isSlidingWithScroll = true;
+        swipeleft();
+    }
+    if (e.wheelDelta > 0) {
+        isSlidingWithScroll = true;
+        swiperight();
+    }
+    // set timeout
+    setTimeout(() => {
+        isSlidingWithScroll = false;
+    }, 500);
 });
