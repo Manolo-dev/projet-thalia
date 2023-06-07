@@ -21,6 +21,7 @@ body {
     font-family: 'lm', sans-serif;
     max-width:100%;
     min-height: 100vh;
+    min-height: -webkit-fill-available !important;
 }
 
 *{box-sizing:border-box;}
@@ -76,6 +77,7 @@ header h1 {
     left: -100vw;
     width: 80vw;
     height: 100vh;
+    height: -webkit-fill-available !important;
     background: #fff;
     transition: left 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
 }
@@ -134,6 +136,7 @@ main {
     display: block;
     width: 100vw;
     height: calc(100vh - 72px);
+    height: calc(-webkit-fill-available - 72px) !important;
     overflow: scroll;
 }
 
@@ -185,18 +188,4 @@ main {
     background: #fff;
     width: 18px;
     height: 18px;
-}
-
-@supports (-webkit-touch-callout: none) {
-    body {
-        min-height: -webkit-fill-available;
-    }
-
-    .header-pages {
-        height: -webkit-fill-available;
-    }
-
-    main {
-        height: calc(-webkit-fill-available - 72px);
-    }
 }
