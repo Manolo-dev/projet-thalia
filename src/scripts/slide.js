@@ -1,6 +1,6 @@
-const slideContainer = document.querySelector('.slide-container');
+const slideContainer = document.querySelector('.slide');
 const slideWrapper = document.querySelector('.slide-wrapper');
-const slides = Array.from(document.querySelectorAll('.slide'));
+const slides = Array.from(document.querySelectorAll('.slide-wrapper img'));
 let touchstartX = 0;
 let touchendX = 0;
 
@@ -16,6 +16,7 @@ function goToSlide(index) {
 }
 
 function swipeleft() {
+    console.log(slides.length);
     if (currentSlide < slides.length - 1) {
         goToSlide(currentSlide + 1);
     }
@@ -28,17 +29,23 @@ function swiperight() {
 }
 
 function checkDirection() {
-    if (touchendX < touchstartX) 
+    if (touchendX < touchstartX) {
+        console.log("swiped left");
         swipeleft();
-    if (touchendX > touchstartX)
+    }
+    if (touchendX > touchstartX) {
+        console.log("swiped right");
         swiperight();
+    }
 }
 
-document.addEventListener('touchstart', e => {
-    touchstartX = e.changedTouches[0].screenX;
+document.addEventListener('mousedown', e => {
+    touchstartX = e.screenX;
 })
 
-document.addEventListener('touchend', e => {
-    touchendX = e.changedTouches[0].screenX;
-    checkDirection();
+document.addEventListener('mouseup', e => {
+    if (slideContainer.contains(e.target)) {
+        touchendX = e.screenX;
+        checkDirection();
+    }
 })
