@@ -1,0 +1,83 @@
+<!doctype html>
+
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="gargantua">
+
+  <link rel="stylesheet" href="./src/styles/styles.css">
+
+  <title>Lorem Ipsum</title>
+</head>
+
+<header>
+  <button class="menu icon-button" onclick="openMenu();">
+    <img src="./src/icons/menu.svg">
+  </button>
+  <h1>Lorem Ipsum</h1>
+  <div class="header-pages">
+    <div class="header-pages-header">
+      <h1>Lorem Ipsum</h1>
+      <button class="menu-close icon-button" onclick="closeMenu();">
+        <img src="./src/icons/close.svg">
+      </button>
+    </div>
+    <div class="header-pages-body">
+      <ul>
+        <li>
+          <a href="./src/pages/pages1.html">
+            Page 1
+          </a>
+        </li>
+        <li>
+          <a href="./src/pages/pages2.html">
+            Page 2
+          </a>
+        </li>
+        <li>
+          <a href="./src/pages/pages3.html">
+            Page 3
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <button class="search icon-button">
+    <img src="./src/icons/search.svg">
+  </button>
+</header>
+
+<body>
+
+<main>
+<section class="main">
+  <div class="slide">
+    <div class="slide-images">
+      <img src="./src/img/1.jpg">
+      <img src="./src/img/2.jpg">
+      <img src="./src/img/3.jpg">
+      <img src="./src/img/1.jpg">
+      <img src="./src/img/2.jpg">
+      <img src="./src/img/3.jpg">
+    </div>
+    <div class="slide-buttons">
+      <button onclick="goToSlide(0);" class="slide-buttons-item active"></button>
+      <button onclick="goToSlide(1);" class="slide-buttons-item"></button>
+      <button onclick="goToSlide(2);" class="slide-buttons-item"></button>
+      <button onclick="goToSlide(3);" class="slide-buttons-item"></button>
+      <button onclick="goToSlide(4);" class="slide-buttons-item"></button>
+      <button onclick="goToSlide(5);" class="slide-buttons-item"></button>
+    </div>
+  </div>
+</section>
+</main>
+
+</body>
+
+<script src="./src/scripts/slide.js"></script>
+<script src="./src/scripts/menu.js"></script>
+
+</html>
+
