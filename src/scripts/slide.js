@@ -75,5 +75,5 @@ slideContainer.addEventListener('wheel', (e) => {
     // set timeout
     setTimeout(() => {
         isSlidingWithScroll = false;
-    }, 500);
+    }, 333);
 });

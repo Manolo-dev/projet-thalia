@@ -132,6 +132,7 @@ main {
     position: relative;
     display: block;
     width: 100vw;
+    height: calc(100vh - 72px);
     overflow: scroll;
 }
 
@@ -152,8 +153,8 @@ main {
 }
 
 .slide-wrapper img {
+    height: 100%;
     width: 100vw;
-    height: calc(100vh - 72px);
     object-fit: cover;
 }
 
