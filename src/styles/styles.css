@@ -58,6 +58,14 @@ header h1 {
     width: 36px;
     border: none;
     background: none;
+    vertical-align: middle;
+}
+
+.icon-button.small {
+    height: 24px;
+    width: 24px;
+    float: right;
+    top: 6px;
 }
 
 .icon-button img {
@@ -108,7 +116,7 @@ header h1 {
     list-style-type: none;
 }
 
-.header-pages-body ul li {
+.header-pages-body > ul li {
     padding: 0px;
     margin: 0px;
     margin-left: 12px;
@@ -117,11 +125,19 @@ header h1 {
     border-bottom: 1px solid #0008;
 }
 
-.header-pages-body ul li ul {
+.header-pages-body > ul > li > ul {
+    display: none;
+}
+
+.header-pages-body > ul > li.open > ul {
+    display: block;
+}
+
+.header-pages-body > ul > li ul {
     border-top: 1px solid #0008;
 }
 
-.header-pages-body ul li:last-child {
+.header-pages-body > ul li:last-child {
     border-bottom: none;
 }
 
@@ -130,6 +146,10 @@ header h1 {
     margin: 0px;
     width: 100%;
     list-style-type: none;
+}
+
+.tree-button.open img {
+    transform: rotate(180deg);
 }
 
 main {
@@ -158,10 +178,10 @@ main {
     transition: transform 0.5s ease-in-out;
 }
 
-.slide-wrapper img {
+.slide-item {
+    position: relative;
     height: 100%;
     width: 100vw;
-    object-fit: cover;
 }
 
 .slide-buttons {
@@ -190,4 +210,27 @@ main {
     background: #fff;
     width: 18px;
     height: 18px;
+}
+
+.slide-background {
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide-content {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    padding: 48px;
+}
+
+.slide-content > h1 {
+    width: 100%;
+    text-align: center;
+    color: #fff;
 }

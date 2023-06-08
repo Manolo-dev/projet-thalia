@@ -17,7 +17,7 @@
     <img src="./src/icons/menu.svg">
   </button>
   <h1>Lorem Ipsum</h1>
-  <div class="header-pages">
+  <div class="header-pages open">
     <div class="header-pages-header">
       <h1>Lorem Ipsum</h1>
       <button class="menu-close icon-button" onclick="closeMenu();">
@@ -27,7 +27,9 @@
     <div class="header-pages-body">
       <ul>
         <li>
-          Section 1
+          Section 1 <button class="icon-button small tree-button" onclick="toggleSubMenu(this);">
+            <img src="./src/icons/arrow-drop-down.svg">
+          </button>
           <ul>
             <li>
               <a href="./src/pages/pages1.html">
@@ -64,9 +66,24 @@
 <main>
   <section class="slide">
       <div class="slide-wrapper">
-        <img src="./src/img/1.jpg" alt="Image 1">
-        <img src="./src/img/2.jpg" alt="Image 2">
-        <img src="./src/img/3.jpg" alt="Image 3">
+        <div class="slide-item">
+          <div class="slide-content">
+            <h1>Lorem Ipsum</h1>
+          </div>
+          <img src="./src/img/1.jpg" alt="Image 1" class="slide-background">
+        </div>
+        <div class="slide-item">
+          <div class="slide-content">
+            <h1>Lorem Ipsum</h1>
+          </div>
+          <img src="./src/img/2.jpg" alt="Image 2" class="slide-background">
+        </div>
+        <div class="slide-item">
+          <div class="slide-content">
+            <h1>Lorem Ipsum</h1>
+          </div>
+          <img src="./src/img/3.jpg" alt="Image 3" class="slide-background">
+        </div>
       </div>
     <div class="slide-buttons">
       <button onclick="goToSlide(0);" class="slide-buttons-item active"></button>

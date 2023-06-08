@@ -1,6 +1,6 @@
 const slideContainer = document.querySelector('.slide');
 const slideWrapper = document.querySelector('.slide-wrapper');
-const slides = Array.from(document.querySelectorAll('.slide-wrapper img'));
+const slides = Array.from(document.querySelectorAll('.slide-item'));
 let touchstartX = 0;
 let touchstartY = 0;
 let touchendX = 0;

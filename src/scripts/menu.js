@@ -7,3 +7,8 @@ function openMenu() {
 function closeMenu() {
     menu.classList.remove('open');
 }
+
+function toggleSubMenu(t) {
+    t.parentNode.classList.toggle('open');
+    t.classList.toggle('open');
+}
