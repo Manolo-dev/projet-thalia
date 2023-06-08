@@ -2,7 +2,9 @@ const slideContainer = document.querySelector('.slide');
 const slideWrapper = document.querySelector('.slide-wrapper');
 const slides = Array.from(document.querySelectorAll('.slide-wrapper img'));
 let touchstartX = 0;
+let touchstartY = 0;
 let touchendX = 0;
+let touchendY = 0;
 let isSlidingWithScroll = false;
 let currentSlide = 0;
 
@@ -29,6 +31,8 @@ function swiperight() {
 }
 
 function checkDirection() {
+    if (Math.abs(touchendY - touchstartY) < 100)
+        return;
     if (touchendX < touchstartX) {
         console.log("swiped left");
         swipeleft();
@@ -41,22 +45,26 @@ function checkDirection() {
 
 slideContainer.addEventListener('mousedown', e => {
     touchstartX = e.screenX;
+    touchstartY = e.screenY;
 });
 
 slideContainer.addEventListener('mouseup', e => {
     if (slideContainer.contains(e.target)) {
         touchendX = e.screenX;
+        touchendY = e.screenY;
         checkDirection();
     }
 });
 
 slideContainer.addEventListener('touchstart', e => {
     touchstartX = e.changedTouches[0].screenX;
+    touchstartY = e.changedTouches[0].screenY;
 });
 
 slideContainer.addEventListener('touchend', e => {
     if (slideContainer.contains(e.target)) {
         touchendX = e.changedTouches[0].screenX;
+        touchendY = e.changedTouches[0].screenY;
         checkDirection();
     }
 });
