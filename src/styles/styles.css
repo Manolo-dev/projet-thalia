@@ -78,7 +78,6 @@ header h1 {
     left: -100vw;
     width: 80vw;
     height: 100vh;
-    height: -webkit-fill-available;
     background: #fff;
     transition: left 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
 }

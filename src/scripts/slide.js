@@ -31,7 +31,7 @@ function swiperight() {
 }
 
 function checkDirection() {
-    if (Math.abs(touchendY - touchstartY) < 100)
+    if (Math.abs(touchendY - touchstartY) > 100)
         return;
     if (touchendX < touchstartX) {
         console.log("swiped left");
