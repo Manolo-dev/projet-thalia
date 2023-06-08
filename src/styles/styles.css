@@ -100,6 +100,7 @@ header h1 {
     margin: 0px;
     display: flex;
     flex-direction: column;
+    background: #fff;
 }
 
 .header-pages-body ul {
