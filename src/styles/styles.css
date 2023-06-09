@@ -227,10 +227,115 @@ main {
     width: 100%;
     height: 100%;
     padding: 48px;
-}
-
-.slide-content > h1 {
+    color: #fff;
     width: 100%;
     text-align: center;
+    text-decoration: none;
+}
+
+.slide-content h1::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #fff, transparent);
+    margin: 12px 0px;
+}
+
+.slide-content h1::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #fff, transparent);
+    margin: 12px 0px;
+}
+
+.slide-content .time {
+    position: relative;
+    display: inline-block;
+}
+
+.slide-content .time::before {
+    position: absolute;
+    top: 50%;
+    overflow: hidden;
+    width: 24px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #fff);
+    left: -36px;
+    content: '';
+}
+
+.slide-content .time::after {
+    position: absolute;
+    top: 50%;
+    overflow: hidden;
+    width: 24px;
+    height: 1px;
+    background: linear-gradient(to left, transparent, #fff);
+    right: -36px;
+    content: '';
+}
+
+.images {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 12px;
+    grid-auto-rows: minmax(100px, auto);
+    padding: 12px
+}
+
+.images-item {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.images-item > img {
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.images-content {
+    position: absolute;
+    margin: 12px;
+    padding: 12px;
+    border: 1px solid #fff;
+    width: calc(100% - 24px);
+    height: calc(100% - 24px);
     color: #fff;
+    text-align: center;
+    text-decoration: none;;
+}
+
+.images-content h3 {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.images-content h3::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #fff, transparent);
+    margin: 12px 0px;
+}
+
+.images-content h3::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #fff, transparent);
+    margin: 12px 0px;
 }
