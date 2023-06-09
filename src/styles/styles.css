@@ -37,7 +37,8 @@ header {
     padding: .5rem;
     margin: 0px;
     display: flex;
-    background: #f8f8f8;
+    background: #fff;
+    box-shadow: 0px 0px 1rem #0008;
     z-index: 100;
 }
 
@@ -93,7 +94,7 @@ header h1 {
 
 .header-pages.open {
     left: 0px;
-    box-shadow: 0px 0px .5rem #0008;
+    box-shadow: 0px 0px 1rem #0008;
 }
 
 .header-pages-header {
@@ -273,10 +274,10 @@ main {
     position: absolute;
     top: 50%;
     overflow: hidden;
-    width: 1rem;
+    width: 3rem;
     height: 1px;
     background: linear-gradient(to right, transparent, #fff);
-    left: -1.5rem;
+    left: -3.5rem;
     content: '';
 }
 
@@ -284,29 +285,31 @@ main {
     position: absolute;
     top: 50%;
     overflow: hidden;
-    width: 1rem;
+    width: 3rem;
     height: 1px;
     background: linear-gradient(to left, transparent, #fff);
-    right: -1.5rem;
+    right: -3.5rem;
     content: '';
 }
 
-.images {
+.box {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-gap: .5rem;
     grid-auto-rows: minmax(100px, auto);
     padding: .5rem;
+    padding-top: 3em;
+    padding-bottom: 0px;
 }
 
-.images-item {
+.box-item {
     position: relative;
     height: 100%;
     width: 100%;
     aspect-ratio: 2/1;
 }
 
-.images-item > img {
+.box-item > img {
     padding: 0px;
     margin: 0px;
     width: 100%;
@@ -314,7 +317,7 @@ main {
     object-fit: cover;
 }
 
-.images-content {
+.box-content {
     position: absolute;
     margin: .5rem;
     padding: .5rem;
@@ -323,10 +326,10 @@ main {
     height: calc(100% - 1rem);
     color: #fff;
     text-align: center;
-    text-decoration: none;;
+    text-decoration: none;
 }
 
-.images-content h3 {
+.box-content h3 {
     position: relative;
     display: inline-block;
     width: 100%;
@@ -336,7 +339,7 @@ main {
     transform: translateY(-50%);
 }
 
-.images-content h3::before {
+.box-content h3::before {
     content: '';
     display: block;
     width: 100%;
@@ -345,12 +348,150 @@ main {
     margin: .5rem 0px;
 }
 
-.images-content h3::after {
+.box-content h3::after {
     content: '';
     display: block;
     width: 100%;
     height: 1px;
     background: linear-gradient(to right, transparent, #fff, transparent);
+    margin: .5rem 0px;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: .5rem;
+    grid-auto-rows: minmax(100px, auto);
+    padding: .5rem;
+    padding-top: 3em;
+}
+
+.card {
+    align-self: start;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: .5rem;
+    grid-row-gap: 1.5rem;
+    grid-auto-rows: minmax(100px, auto);
+}
+
+.card-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    aspect-ratio: 1/1.618;
+    box-shadow: 0px 0px 1rem #0008;
+}
+
+.card-item > img {
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    height: 50%;
+    top: 0px;
+    object-fit: cover;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    width: 100%;
+    height: 50%;
+    font-size: .75rem;
+    color: #000;
+}
+
+.card-content-category {
+    top: 0px;
+    left: 0px;
+}
+
+.card-content h5 {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    font-size: 1rem;
+}
+
+.card-content h5::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, #000, transparent);
+    margin: .5rem 0px;
+}
+
+.card-content h5::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, #000, transparent);
+    margin: .5rem 0px;
+}
+
+.card-content p {
+    position: relative;
+    display: -webkit-box;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    background: linear-gradient(to bottom, #000 50%, transparent 100%);
+    color: transparent;
+    background-clip: text;
+    overflow: hidden;
+}
+
+.card-content-time {
+    margin-top: 1rem;
+    font-size: 0.67rem;
+    color: #000a;
+}
+
+.identity {
+    align-self: start;
+    position: relative;
+    display: flex;
+    box-shadow: 0px 0px 1rem #0008;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.identity h2 {
+    margin: 0px;
+    padding: 0px;
+    font-size: 1.5rem;
+}
+
+.identity h2::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, #000, transparent);
+    margin: .5rem 0px;
+}
+
+.identity h3 {
+    margin: 0px;
+    padding: 0px;
+    font-size: 1rem;
+}
+
+.identity h3::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, #000, transparent);
     margin: .5rem 0px;
 }
 
@@ -362,7 +503,11 @@ html {
 
 header {
     position: fixed;
-    background: #FFF4;
+    background: #fff4;
+}
+
+header.scrolled {
+    background: #fff;
 }
 
 .header-pages {
@@ -388,16 +533,30 @@ main {
     flex-direction: column;
 }
 
-.images {
+.box {
     padding: 3rem;
-    padding-left: 6rem;
-    padding-right: 6rem;
+    padding-left: 12rem;
+    padding-right: 12rem;
     grid-gap: 2rem;
     grid-template-columns: repeat(4, 1fr);
 }
 
-.images-item {
+.box-item {
     aspect-ratio: 1/1;
+}
+
+.main {
+    padding: 3rem;
+    padding-left: 12rem;
+    padding-right: 12rem;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.card {
+    grid-column: 1 / 3;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
 }
 
 }

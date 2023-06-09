@@ -63,7 +63,7 @@
 
 <body>
 
-<main>
+<main onscroll="handleScroll();">
   <section class="slide">
       <div class="slide-wrapper">
         <div class="slide-item">
@@ -74,7 +74,7 @@
               <time>01/01/2021</time>
             </div>
           </a>
-          <img src="./src/img/1.jpg" alt="Image 1" class="slide-background">
+          <img src="./src/img/1.jpg" alt="box 1" class="slide-background">
         </div>
         <div class="slide-item">
           <a class="slide-content" href="./src/pages/pages2.html">
@@ -84,7 +84,7 @@
               <time>01/01/2021</time>
             </div>
           </a>
-          <img src="./src/img/2.jpg" alt="Image 2" class="slide-background">
+          <img src="./src/img/2.jpg" alt="box 2" class="slide-background">
         </div>
         <div class="slide-item">
           <a class="slide-content" href="./src/pages/pages3.html">
@@ -94,7 +94,7 @@
               <time>01/01/2021</time>
             </div>
           </a>
-          <img src="./src/img/3.jpg" alt="Image 3" class="slide-background">
+          <img src="./src/img/3.jpg" alt="box 3" class="slide-background">
         </div>
       </div>
     <div class="slide-buttons">
@@ -104,31 +104,100 @@
     </div>
   </section>
 
-  <section class="images">
-    <div class="images-item">
-      <a class="images-content" href="./src/pages/pages1.html">
+  <section class="box">
+    <div class="box-item">
+      <a class="box-content" href="./src/pages/pages1.html">
         <h3>Lorem Ipsum dolor sit amet</h3>
       </a>
-      <img src="./src/img/1.jpg" alt="Image 1">
+      <img src="./src/img/1.jpg" alt="box 1">
     </div>
-    <div class="images-item">
-      <a class="images-content" href="./src/pages/pages2.html">
+    <div class="box-item">
+      <a class="box-content" href="./src/pages/pages2.html">
         <h3>Lorem Ipsum dolor sit amet</h3>
       </a>
-      <img src="./src/img/2.jpg" alt="Image 2">
+      <img src="./src/img/2.jpg" alt="box 2">
     </div>
-    <div class="images-item">
-      <a class="images-content" href="./src/pages/pages3.html">
+    <div class="box-item">
+      <a class="box-content" href="./src/pages/pages3.html">
         <h3>Lorem Ipsum dolor sit amet</h3>
       </a>
-      <img src="./src/img/3.jpg" alt="Image 3">
+      <img src="./src/img/3.jpg" alt="box 3">
     </div>
-    <div class="images-item">
-      <a class="images-content" href="./src/pages/pages1.html">
+    <div class="box-item">
+      <a class="box-content" href="./src/pages/pages1.html">
         <h3>Lorem Ipsum dolor sit amet</h3>
       </a>
-      <img src="./src/img/1.jpg" alt="Image 1">
+      <img src="./src/img/1.jpg" alt="box 1">
     </div>
+  </section>
+
+  <section class="main">
+    <section class="card">
+      <a class="card-item" href="./src/pages/pages1.html">
+        <img src="./src/img/1.jpg" alt="box 1">
+        <div class="card-content">
+          <span class="card-content-category">Category</span>
+          <h5>Lorem Ipsum dolor sit amet</h5>
+          <p class="card-content-abstract">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, vitae aliquam nisl nunc vitae nisl. Donec euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, vitae aliquam nisl nunc vitae nisl.</p>
+          <time class="card-content-time">01/01/2021</time>
+        </div>
+      </a>
+      <a class="card-item" href="./src/pages/pages2.html">
+        <img src="./src/img/2.jpg" alt="box 2">
+        <div class="card-content">
+          <span class="card-content-category">Category</span>
+          <h5>Lorem Ipsum dolor sit amet</h5>
+          <p class="card-content-abstract">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, vitae aliquam nisl nunc vitae nisl. Donec euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, vitae aliquam nisl nunc vitae nisl.</p>
+          <time class="card-content-time">01/01/2021</time>
+        </div>
+      </a>
+      <a class="card-item" href="./src/pages/pages3.html">
+        <img src="./src/img/3.jpg" alt="box 3">
+        <div class="card-content">
+          <span class="card-content-category">Category</span>
+          <h5>Lorem Ipsum dolor sit amet</h5>
+          <p class="card-content-abstract">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, vitae aliquam nisl nunc vitae nisl. Donec euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, vitae aliquam nisl nunc vitae nisl.</p>
+          <time class="card-content-time">01/01/2021</time>
+        </div>
+      </a>
+    </section>
+    <section class="identity">
+      <div>
+        <h2>Cicéron</h2>
+        <h3>Homme d'État</h3>
+        <ul>
+          <li><strong>Nom :</strong> Cicéron</li>
+          <li><strong>Métier :</strong> Homme d'État</li>
+          <li><strong>Expérience :</strong> Plus de 30 ans en politique</li>
+          <li><strong>Compétences :</strong> Orateur éloquent, juriste, défenseur de la République</li>
+          <li><strong>Réalisations :</strong> Auteur de nombreux discours et traités politiques, consul de Rome en 63 av. J.-C.</li>
+          <li><strong>Formation :</strong> Études en rhétorique et en droit</li>
+          <li><strong>Employeur :</strong> République romaine</li>
+          <li><strong>Localisation :</strong> Rome</li>
+          <li><strong>Langues parlées :</strong> Latin</li>
+          <li><strong>Loisirs :</strong> Écriture, politique</li>
+          <li><strong>Nom :</strong> Cicéron</li>
+          <li><strong>Métier :</strong> Homme d'État</li>
+          <li><strong>Expérience :</strong> Plus de 30 ans en politique</li>
+          <li><strong>Compétences :</strong> Orateur éloquent, juriste, défenseur de la République</li>
+          <li><strong>Réalisations :</strong> Auteur de nombreux discours et traités politiques, consul de Rome en 63 av. J.-C.</li>
+          <li><strong>Formation :</strong> Études en rhétorique et en droit</li>
+          <li><strong>Employeur :</strong> République romaine</li>
+          <li><strong>Localisation :</strong> Rome</li>
+          <li><strong>Langues parlées :</strong> Latin</li>
+          <li><strong>Loisirs :</strong> Écriture, politique</li>
+          <li><strong>Nom :</strong> Cicéron</li>
+          <li><strong>Métier :</strong> Homme d'État</li>
+          <li><strong>Expérience :</strong> Plus de 30 ans en politique</li>
+          <li><strong>Compétences :</strong> Orateur éloquent, juriste, défenseur de la République</li>
+          <li><strong>Réalisations :</strong> Auteur de nombreux discours et traités politiques, consul de Rome en 63 av. J.-C.</li>
+          <li><strong>Formation :</strong> Études en rhétorique et en droit</li>
+          <li><strong>Employeur :</strong> République romaine</li>
+          <li><strong>Localisation :</strong> Rome</li>
+          <li><strong>Langues parlées :</strong> Latin</li>
+          <li><strong>Loisirs :</strong> Écriture, politique</li>
+        </ul>
+      </div>
   </section>
 </main>
 
